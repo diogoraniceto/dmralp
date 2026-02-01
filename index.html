@@ -10,6 +10,23 @@
         gtag('js', new Date());
         gtag('config', 'AW-17923050788');
     </script>
+    <!-- Event snippet for Contato conversion page -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17923050788/Y5w0CPuB2vAbEKSasOJC',
+                'value': 1.0,
+                'currency': 'BRL',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -289,7 +306,8 @@
                 resultados.
             </p>
             <a href="https://wa.me/5514997767200?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20avalia%C3%A7%C3%A3o%20gratuita."
-                class="btn btn-primary btn-glow btn-large" id="cta-button" target="_blank">
+                class="btn btn-primary btn-glow btn-large" id="cta-button" target="_blank"
+                onclick="return gtag_report_conversion('https://wa.me/5514997767200?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20avalia%C3%A7%C3%A3o%20gratuita.');">
                 Falar com um Consultor
                 <svg class="btn-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2">
